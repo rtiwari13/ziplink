@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'urls',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#  JWT auth 
+import datetime
+
+JWT_SECRET_KEY = "cool"  # a secure key
+JWT_ALGORITHM = "HS256"
+JWT_EXPIRATION_DELTA = datetime.timedelta(hours=1)  # Tokens are valid for 1 hour
