@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+
+@import url("https://fonts.cdnfonts.com/css/moret");
+@import url("https://fonts.cdnfonts.com/css/bricolage-grotesque");
+
+body, html, * {
+  font-family: 'Bricolage Grotesque';
+}
+
+:root {
+  --background: hsl(217, 50%, 10%);
+  --foreground: hsl(217, 5%, 100%);
+  --card: hsl(217, 50%, 10%);
+  --card-foreground: hsl(217, 5%, 100%);
+  --popover: hsl(217, 50%, 5%);
+  --popover-foreground: hsl(217, 5%, 100%);
+  --primary: hsl(217, 69%, 47%);
+  --primary-foreground: 0 0% 100%;
+  --secondary: hsl(217, 30%, 20%);
+  --secondary-foreground: 0 0% 100%;
+  --muted: hsl(179, 30%, 25%);
+  --muted-foreground: hsl(217, 5%, 65%);
+  --accent: hsl(179, 30%, 25%);
+  --accent-foreground: hsl(217, 5%, 95%);
+  --destructive: 0 100% 50%;
+  --destructive-foreground: hsl(217, 5%, 100%);
+  --border: hsl(217, 30%, 50%);
+  --input: hsl(217, 30%, 50%);
+  --ring: hsl(217, 69%, 47%);
+  --radius: 0.3rem;
+
+
+ /* --background: hsl(217, 100%, 100%);
+  --foreground: hsl(217, 5%, 10%);
+  --card: hsl(217, 50%, 100%);
+  --card-foreground: hsl(217, 5%, 15%);
+  --popover: hsl(217, 100%, 100%);
+  --popover-foreground: hsl(217, 100%, 10%);
+  --primary: hsl(217, 69%, 47%);
+  --primary-foreground: 0 0% 100%;
+  --secondary: hsl(217, 30%, 90%);
+  --secondary-foreground: 0 0% 0%;
+  --muted: hsl(179, 30%, 95%);
+  --muted-foreground: hsl(217, 5%, 40%);
+  --accent: hsl(179, 30%, 90%);
+  --accent-foreground: hsl(217, 5%, 15%);
+  --destructive: 0 100% 50%;
+  --destructive-foreground: hsl(217, 5%, 100%);
+  --border: hsl(217, 30%, 82%);
+  --input: hsl(217, 30%, 50%);
+  --ring: hsl(217, 69%, 47%);
+  --radius: 0.3rem; */
+}
