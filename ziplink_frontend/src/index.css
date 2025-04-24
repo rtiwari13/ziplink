@@ -23,7 +23,7 @@ body, html, * {
   --muted-foreground: hsl(217, 5%, 65%);
   --accent: hsl(179, 30%, 25%);
   --accent-foreground: hsl(217, 5%, 95%);
-  --destructive: 0 100% 50%;
+  --destructive: hsl(0 100% 50%);
   --destructive-foreground: hsl(217, 5%, 100%);
   --border: hsl(217, 30%, 50%);
   --input: hsl(217, 30%, 50%);
@@ -52,3 +52,39 @@ body, html, * {
   --ring: hsl(217, 69%, 47%);
   --radius: 0.3rem; */
 }
+
+
+.landing_gradConic__KaiR0 {
+  position: absolute;
+  display: block;
+  z-index: 5;
+  background: conic-gradient(from 180deg at 50% 50%, #2a8af6 0deg, #a853ba 180deg, #e92a67 1turn);
+  mix-blend-mode: normal;
+  filter: blur(75px);
+  will-change: filter;
+  border-radius: 100%;
+  opacity: .2;
+  width: 1200px;
+  height: 300px;
+}
+
+.card{
+  display:flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  background: var(--background);
+  z-index:10;
+  opacity: 80%;
+  border: 1px solid var(--ring);
+  
+}
+
+.card > h3 {
+  color: var(--card-foreground);
+}
+
+.card > p {
+  color:var(--muted-foreground)
+}
+
