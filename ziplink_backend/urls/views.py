@@ -1,26 +1,24 @@
-from rest_framework.views import APIView
-from rest_framework.views import Response
-from rest_framework import status
+from rest_framework import generics
 from django.shortcuts import get_object_or_404, redirect
+from rest_framework.response import Response
 from .models import ShortenedURL
 from .serializers import ShortenedURLSerializer
 
-class ShortenURLView(APIView):
-    def post(self,request):
-        serializer = ShortenedURLSerializer(data=request.data)
-        if serializer.is_valid():
-            shortened_url = serializer.save()
-            return Response({
-                "original_url":shortened_url.original_url,
-                "short_code":shortened_url.short_code,
-            },
-            status=status.HTTP_201_CREATED
-            )
-        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+class ShortenURLCreateView(generics.CreateAPIView):
+    queryset = ShortenedURL.objects.all()
+    serializer_class = ShortenedURLSerializer
 
-class RedirectView(APIView):
-    def get(self,request, short_code):
-        shortened_url = get_object_or_404(ShortenedURL,short_code=short_code)
-        return redirect(shortened_url.original_url)
-    
-    
+    def create(self, request, *args, **kwargs):
+        response = super().create(request, *args, **kwargs)
+        return Response({
+            'short_url': request.build_absolute_uri(
+                f'/{response.data["short_code"]}'
+            ),
+            'original_url': response.data['original_url'],
+            'created_at': response.data['created_at']
+        })
+
+class RedirectOriginalView(generics.GenericAPIView):
+    def get(self, request, short_code):
+        url_obj = get_object_or_404(ShortenedURL, short_code=short_code)
+        return redirect(url_obj.original_url)
