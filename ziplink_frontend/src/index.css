@@ -16,9 +16,9 @@ body, html, * {
   --popover: hsl(217, 50%, 5%);
   --popover-foreground: hsl(217, 5%, 100%);
   --primary: hsl(217, 69%, 47%);
-  --primary-foreground: 0 0% 100%;
+  --primary-foreground: hsl(0 0% 100%);
   --secondary: hsl(217, 30%, 20%);
-  --secondary-foreground: 0 0% 100%;
+  --secondary-foreground: hsl(0 0% 100%);
   --muted: hsl(179, 30%, 25%);
   --muted-foreground: hsl(217, 5%, 65%);
   --accent: hsl(179, 30%, 25%);
