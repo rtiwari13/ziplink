@@ -15,16 +15,17 @@ export default function Navbar() {
           <Link to="/" className="text-[var(--accent-foreground)] hover:text-blue-600 transition">
             Home
           </Link>
-          <Link to="/features" className="text-[var(--accent-foreground)] hover:text-blue-600 transition">
-            Products
-          </Link>
-          <Link to="/features" className="text-[var(--accent-foreground)] hover:text-blue-600 transition">
+          <a href="/#services" className="text-[var(--accent-foreground)] hover:text-blue-600 transition">
+            Services
+          </a>
+          <a href="/#features" className="text-[var(--accent-foreground)]  hover:text-blue-600 transition">
             Features
-          </Link>
-          <Link to="/analytics" className="text-[var(--accent-foreground)] hover:text-blue-600 transition">
+          </a>
+          
+          <Link to="/login" className="text-[var(--accent-foreground)] hover:text-blue-600 transition">
             Login
           </Link>
-          <Link to="/features" className="text-[var(--accent-foreground)] hover:text-blue-600 transition">
+          <Link to="/signup" className="text-[var(--accent-foreground)] hover:text-blue-600 transition">
             Signup
           </Link>
         </div>

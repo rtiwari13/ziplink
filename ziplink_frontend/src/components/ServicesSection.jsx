@@ -23,7 +23,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="w-full py-20 px-6 bg-[hsl(var(--card))] text-white">
+    <section id="services" className="w-full py-20 px-6 bg-[hsl(var(--card))] text-white">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-12">Our Services</h2>
         <div className="grid gap-8 md:grid-cols-3">

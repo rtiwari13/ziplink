@@ -36,10 +36,10 @@ const features = [
 
 const FeatureSection = () => {
   return (
-    <section className="py-16 bg-[var(--background)] text-gray-800 relative">
+    <section id="features" className=" py-16 pt-25 bg-[var(--background)] text-gray-800 relative">
       <div class="[top:0] right-[0] left-[0] relative landing_gradConic__KaiR0 "></div>
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-[var(--destructive-foreground)] text-center mb-12">Why ZipLink?</h2>
+        <h2 className="text-3xl font-bold text-[var(--destructive-foreground)] text-center mb-12">FEATURES</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
           {features.map((feature, index) => (
             <div key={index} className=" card text-center p-6 border rounded-lg hover:shadow-md transition duration-300">
