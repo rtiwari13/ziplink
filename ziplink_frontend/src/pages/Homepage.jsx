@@ -4,6 +4,7 @@ import FeatureSection from "../components/FeatureSection";
 import ServicesSection from "../components/ServicesSection";
 import Footer from "../components/Footer";
 
+
 const HomePage = () => {
     return  (
         <div className="bg-[var(--background)] min-h-screen">
