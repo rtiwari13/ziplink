@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'urls',
     'dashboard',
     'users',
-    'corsheaders'
+    'corsheaders',
+    'qcode',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
+
 
 CORS_ALLOW_ALL_ORIGINS = True
 
