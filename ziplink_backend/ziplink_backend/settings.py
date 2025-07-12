@@ -22,13 +22,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c4op#77ee-*+a6sta&=o)-4eigcw#1ghsy15v8lpqzg$+n&xlh'
+# SECRET_KEY = 'django-insecure-c4op#77ee-*+a6sta&=o)-4eigcw#1ghsy15v8lpqzg$+n&xlh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'user.authentication.Authentication',
+    ]
+}
+
+SECRET_KEY= config('SECRET_KEY')
+
+BASE_SHORT_DOMAIN = config('BASE_SHORT_DOMAIN')
 
 # Application definition
 
@@ -41,6 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'user',
+    'shortener',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
