@@ -1,24 +1,37 @@
-import React from 'react';
-import StatsOverview from '../components/dashboard/StatsOverview';
-import SearchAndFilterBar from '../components/dashboard/SearchAndFilterBar';
-import LinkAnalyticsTable from '../components/dashboard/LinkAnalyticsTable';
-import TopLinksSection from '../components/dashboard/TopLinksSection';
-import TrendsAndGraphs from '../components/dashboard/TrendsAndGraphs';
-import Navbar from '../components/Navbar';
+// src/App.jsx
+import Header from "../components/dashboard/Header";
+import Sidebar from "../components/dashboard/Sidebar";
+import DashboardMain from "../components/dashboard/DashboardMain";
+import Footer from "../components/dashboard/Footer";
+import UrlAnalytics from "../components/dashboard/UrlAnalytics";
+import { useState } from "react";
+import QRInsights from "../components/dashboard/QRInsights";
+import Settings from "../components/dashboard/Settings";
+import { QrCodeIcon } from "@heroicons/react/24/outline";
 
-const Dashboard = () => {
+function Dashboard() {
+  const [selected, setSelected] = useState("overview");
   return (
-    
-    <div className="p-6 space-y-6 bg-gray-100 min-h-screen">
-      <Navbar/>
-      <h1 className="text-3xl font-bold text-gray-800">Analytics Dashboard</h1>
-      <StatsOverview />
-      <SearchAndFilterBar />
-      <LinkAnalyticsTable />
-      <TopLinksSection />
-      <TrendsAndGraphs />
+    <div className="flex h-screen flex-col">
+      <Header />
+      <div className="flex flex-1 overflow-hidden">
+        <Sidebar selected={selected} setSelected={setSelected} />
+        <div className="flex flex-col flex-1 overflow-y-auto">
+          {selected === "overview" ? (
+            <DashboardMain />
+          ) : selected == "urlanalytics" ? (
+            <UrlAnalytics />
+          ) : selected == "qrinsights" ? (
+            <QRInsights />
+          ) : selected == "settings" ? (
+            <Settings />
+          ) : null}
+         
+          <Footer />
+        </div>
+      </div>
     </div>
   );
-};
+}
 
 export default Dashboard;

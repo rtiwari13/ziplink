@@ -3,6 +3,7 @@ import HeroSection from "../components/Herosection";
 import FeatureSection from "../components/FeatureSection";
 import ServicesSection from "../components/ServicesSection";
 import Footer from "../components/Footer";
+import QRCodeGenerator from "../components/QRCodeGenerator";
 
 
 const HomePage = () => {
@@ -10,6 +11,7 @@ const HomePage = () => {
         <div className="bg-[var(--background)] min-h-screen">
             <Navbar/>
             <HeroSection/>
+            {/* <QRCodeGenerator/> */}
             <FeatureSection/>
             <ServicesSection/>
             <Footer/>
