@@ -9,7 +9,7 @@ class ShortURLListSerializer(serializers.ModelSerializer):
             'long_url',
             'short_code',
             'created_at',
-            # 'expires_at',
+            'expires_at',
             'is_custom',
             'clicks'    
         ]

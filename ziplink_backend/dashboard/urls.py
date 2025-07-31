@@ -2,21 +2,15 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-#     #  1: Core Functionality
 
 #     # 1. Retrieve all short links for authenticated user
      path('my_links/', views.UserLinksListView.as_view(), name='user-links'),
      
-     # update , delete short links
-#     path('link/<int:pk>/', views.LinkDetailView.as_view(), name='link-detail'),
-
-#     # 2. Bulk upload long URLs for shortening
-#     path('bulk-upload/', views.BulkUploadView.as_view(), name='bulk-upload'),
-
 #     #  2: Dashboard Analytics & Activity
 
-#     # User dashboard analytics (total links, total clicks, )
-#     path('dashboard/', views.DashboardAnalyticsView.as_view(), name='dashboard'),
+#     # User dashboard analytics (total links, total clicks,most_clicked_links,active_links,expired_links )
+    path('user_dashboard/', views.UserDashboardAnalyticsView.as_view(), name='dashboard'),
+    
 #     # Show recent activity (recent links, recently expired)
 #     path('recent/', views.RecentActivityView.as_view(), name='recent-activity'),
 
