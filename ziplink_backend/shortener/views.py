@@ -105,6 +105,7 @@ class BulkUploadView(APIView):
 
     def post(self, request):
         urls = request.data.get("urls", [])
+        response_data = []
 
         # Check if `urls` is not a list OR it's an empty list
         if not isinstance(urls, list) or not urls:
@@ -124,14 +125,14 @@ class BulkUploadView(APIView):
             except ValidationError:
                 continue
 
-        short_code = generate_short_code()
+            short_code = generate_short_code()
 
-        # Create a new ShortURL object in the database 
-        short_url = ShortURL.objects.create(
+            # Create a new ShortURL object in the database 
+            short_url = ShortURL.objects.create(
             user=request.user, long_url=long_url, short_code=short_code
-        )
+            )
 
-        created_links.append(short_url)
+            created_links.append(short_url)
         serializer = ShortURLDetailSerializer(created_links, many = True)
         # Returns the list of successfully created short links in the response
         return Response(serializer.data, status=status.HTTP_201_CREATED)
